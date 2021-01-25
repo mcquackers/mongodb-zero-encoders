@@ -8,6 +8,7 @@ the bsoncodec.TypeZeroer interface, allowing zero value primitives to be success
 Usage:
 
 For default encoders + zero value omitting encoders:
+```
 ////////////////
 import(
 	zero_enc  "github.com/mcquackers/mongodb-zero-encoders"
@@ -16,9 +17,11 @@ import(
 reg := zero_enc.DefaultValueEncoders()
 clientOptions := options.ClientOptions().SetRegistry(reg)
 ////////////////
+```
 
 For registering these encoders on an existing Registry:
 
+```
 ////////////////
 import(
         zero_enc  "github.com/mcquackers/mongodb-zero-encoders"
@@ -30,4 +33,4 @@ zero_enc.RegisterZeroEncoders(rb)
 reg := rb.Build()
 clientOptions := options.ClientOptions().SetRegistry(reg)
 ////////////////
-
+```
